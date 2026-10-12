@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>데이터 퀴즈</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="student-info" class="student-info">학번 2601954 이름 안서현</div>
+
+  <main class="container">
+    <h1>데이터 퀴즈</h1>
+
+    <!-- 1. 카테고리 선택 -->
+    <section id="screen-category" class="screen">
+      <h2>카테고리를 고르세요</h2>
+      <div id="category-list" class="btn-list"></div>
+    </section>
+
+    <!-- 2. 모드 선택 -->
+    <section id="screen-mode" class="screen hidden">
+      <h2>모드를 고르세요</h2>
+      <p class="sub" id="mode-category"></p>
+      <div class="btn-list">
+        <button class="btn mode-btn" data-mode="practice">연습<small>시간 제한 없이 풀고 해설 보기</small></button>
+        <button class="btn mode-btn" data-mode="speed">스피드<small>문항마다 15초 제한</small></button>
+        <button class="btn mode-btn" data-mode="hint">힌트<small>힌트로 오답 2개 지우기 (맞히면 0.5점)</small></button>
+      </div>
+      <button class="btn link" id="back-to-category">← 카테고리 다시 고르기</button>
+    </section>
+
+    <!-- 3. 문제 풀기 -->
+    <section id="screen-quiz" class="screen hidden">
+      <div class="quiz-top">
+        <span id="quiz-mode-label" class="badge"></span>
+        <span id="quiz-progress"></span>
+      </div>
+      <div id="timer" class="timer hidden">남은 시간 <strong id="timer-value">15</strong>초</div>
+      <h2 id="question-text"></h2>
+      <div id="choices" class="choices"></div>
+      <button class="btn hint-btn hidden" id="hint-btn">힌트 (오답 2개 지우기)</button>
+      <div id="feedback" class="feedback hidden"></div>
+      <button class="btn primary hidden" id="next-btn">다음</button>
+    </section>
+
+    <!-- 4. 결과 -->
+    <section id="screen-result" class="screen hidden">
+      <h2>결과</h2>
+      <p id="result-score" class="score"></p>
+      <ul id="result-list" class="result-list"></ul>
+      <div class="btn-list">
+        <button class="btn primary hidden" id="retry-wrong-btn">틀린 문제 다시 풀기</button>
+        <button class="btn" id="restart-btn">처음으로</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
